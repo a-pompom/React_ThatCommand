@@ -1,0 +1,59 @@
+//flex-box
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+}
+
+@mixin flex-right {
+	display: flex;
+	justify-content: flex-end;
+}
+
+@mixin flex-left {
+	display: flex;
+	justify-content: flex-start;
+}
+
+@mixin flex-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+@mixin flex-table {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+// レスポンシブ用
+@mixin responsive($breakpoint: pc) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+
+// デバイスが縦長か横長かでレイアウトを作り分ける用
+@mixin for-portrait {
+	@media screen and (orientation: portrait) { @content; }
+}
+@mixin for-landscape {
+	@media screen and (orientation: landscape) { @content; }
+}
+
+
+
+// 文字や色を切り替えるボタン
+@mixin variableButton($contentColor, $contentString) {
+	color: $contentColor;
+	border: 1px solid $dark;
+
+	&::after {
+		content: $contentString;
+	}
+
+	&:hover {
+		background-color: $contentColor;
+		color: #FFF;
+
+	}
+}

@@ -1,0 +1,170 @@
+.command {
+	
+	&-container {
+		width: 100%;
+		height: 100%;
+		
+		margin-top: 10px;
+		
+		// スマホではカテゴリとコマンドを縦並びにするため、フレックスレイアウトは使わない
+		@include responsive(tb-pc) {
+			@include flex-center;		
+		}
+		
+	}
+	
+	// カテゴリ一覧
+	&-category {
+		
+		@include responsive(sp) {
+			width: 100%;
+			height: auto;
+			min-height: 300px;
+			
+			overflow-y: scroll;
+		}
+		@include responsive(tb-pc) {
+			width: 29%;
+			height: 100%;
+			
+			margin: 10px 0 5px 20px; // コマンドとボーダーをくっつけるために右方向のマージンを0に設定
+		}
+		
+		text-align: left;
+		
+		// ヘッダ タイトルと追加ボタン
+		&--header {
+			@include flex-between;
+			
+			border-bottom: 2px solid $accent-strong;
+			
+			// 追加ボタン
+			h2:last-child { 
+				@include responsive(sp) {
+					display: none;
+				}
+				margin-right: 10%; // 追加ボタンは右方向のマージンがあった方がバランスがとれるので、設定
+			}
+			
+			// 追加ボタンは一度クリックすると「-」(閉じるボタン)、もう一度クリックすると「+」(追加ボタン)となる
+			.new-category {
+				@include variableButton(#C14F7E, "+");
+			}
+			.close-category {
+				@include variableButton(#4893C6, "-");
+			}
+			
+		}
+		
+		// 入力エリアの移動とリストを連動させるために親要素のbodyは相対配置とする
+		// 拡大・縮小でopen/closeを実現
+		&--body {
+
+			height: 100%;
+			
+			position: relative;
+			
+			// 表示・非表示が切り替わる要素
+			&__input {
+				width: 100%;
+				
+				position: absolute; // 位置はJSで算出
+				
+				margin-top: 20px;
+				
+				// 拡大して出現
+				transform-origin: 0 0; 
+				transform: scaleY(1);
+				transition: all .5s;
+			}
+
+			&__list {
+				width: 100%;
+				
+				position: absolute;
+				
+				margin-top: 35px;
+				
+				// toggle要素に追従する際、滑らかに描画するため設定
+				transform-origin: 0 0;
+				transition: all .5s;
+			}
+		} // end body
+		
+	} // end category
+	
+	
+	// コマンド
+	&-item {
+		
+		@include responsive(sp) {
+			width: 100%;
+			height: 100%;
+		}
+		@include responsive(tb-pc) {
+			width: 68%;
+			height: 100%;
+			
+			margin: 10px 20px 5px 0; // カテゴリとボーダーをくっ付けるために左のマージンを0に設定
+		}
+		
+		// ヘッダ カテゴリ部分と似通ってはいるが、
+		// 今後ソートや検索などが追加される可能性があるので、別々に管理しておく
+		&--header {
+			@include flex-between;
+			
+			border-bottom: 2px solid $accent-strong;
+			
+			h2:last-child {
+				@include responsive(sp) {
+					display: none;
+				}
+				margin-right: 7%;
+			}
+			
+			// 追加ボタンは一度クリックすると「-」(閉じるボタン)、もう一度クリックすると「+」(追加ボタン)となる
+			.new-command {
+				@include variableButton(#C14F7E, "+");
+			}
+			.close-command {
+				@include variableButton(#4893C6, "-");
+			}
+				
+		}
+		
+		// 入力エリアの移動とリストを連動させるために親要素のbodyは相対配置とする
+		// 拡大・縮小でopen/closeを実現
+		&--body {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			
+			// toggle要素
+			&__input {
+				width: 100%;
+				
+				position: absolute;
+				
+				margin: 20px 20px;
+				
+				transform-origin: 0 0;
+				transform: scaleY(1);
+				transition: all .8s;
+			}
+
+			// toggle要素に追従
+			&__list {
+				position: relative;
+				top: 60px;
+				
+				margin: 10px;
+				
+				transform-origin: 0 0;
+				transition: all .8s;
+			}
+			
+		}
+		
+	} // end コマンド
+	
+}

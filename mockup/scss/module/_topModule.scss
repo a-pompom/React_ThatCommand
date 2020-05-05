@@ -1,0 +1,24 @@
+.top-input {
+	$color: ("textColor": $darkest, "accentColor":$accent-strong, "nonActiveColor": $light);
+	$scale: ("perWidth": 50%, "height": 48px);
+	@include input-simple($color, $scale, 1.0rem);
+
+}
+
+.search-button {
+	
+	@extend %button--simple;
+	
+	width: 30%;
+	height: 42px;
+	
+	font-size: 1.3rem;
+	
+	background-color: $lightest; 
+	color: $accent-strong;
+
+	&:hover {
+		background-color: $accent-strong;
+	}
+	
+}

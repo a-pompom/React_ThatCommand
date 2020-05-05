@@ -1,0 +1,35 @@
+// カテゴリ一覧
+.category-list {
+	@include responsive(sp-tb) {
+		width: 93%;
+	}
+	@include responsive(pc) {
+		width: 80%;
+	}
+	
+	&__item {
+		
+		text-align: center;
+		font-weight: bold;
+		line-height: 1.5;
+		
+		margin-bottom: 1.2rem;
+		padding: 0.5rem;
+		
+		border-left: solid 6px $accent-strong;
+		border-bottom: solid 2px $accent-middle;
+		
+		background-color: $accent-weak;
+		color: $dark;
+		
+		cursor: pointer;
+		
+		
+		&:hover {
+			border-bottom: solid 2px #EAF2FA;
+			
+			background-color: $accent-middle;
+			color: $lightest
+		}
+	}
+}

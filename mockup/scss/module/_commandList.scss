@@ -1,0 +1,75 @@
+.command-list {
+	
+	width: 80%;
+	
+	position: relative;
+	right: 10%;
+	
+	padding: 12px;
+	margin: 50px;
+    border: solid 2px $reverseAccent;
+	
+	&::after{ // リストタイトル(サブカテゴリ)
+        content:attr(title);
+		
+		position: absolute; // リスト左上に絶対配置
+        bottom: 100%;
+        left: -2px;
+		
+        font-weight: bold;
+        font-size: 1.2rem;
+		letter-spacing: 0.05rem;
+		
+        border-radius: 4px 4px 0 0;
+        padding: 2px 5px;
+
+        color: #FFF;
+        background-color: $reverseAccent;
+    }
+
+    &__item {
+        width: 95%;
+        height: 40px;
+
+		position: relative;
+		
+        line-height: 40px;
+		text-align: left;
+		
+		padding: 3px;
+        border-bottom: 1px dashed $reverseAccent;
+		
+		transform-origin: 0 0;
+			
+		transition: all .4s;
+
+        &:last-child {
+            border: none; // 枠線の重複を防ぐため、最後の要素には枠を表示しない
+        }
+		
+		// 「ｖ」記号
+		&--opener {
+			position: absolute;
+			right: 0.5em;
+			top: -0.1rem;
+			
+			line-height: 40px;
+			
+			padding: 3px;
+        	
+			cursor: pointer;
+		}
+		 
+		// メモ欄
+		&--memo {
+			width: 100%;
+			
+			position: relative;
+			
+			padding-bottom: 10px;
+			border-top: 1px dashed $light;
+			
+		}
+		  
+    }
+}
