@@ -1,25 +1,15 @@
 import React from 'react';
 
+import Login from './Login/View/Login';
 
 const App = () =>{
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      />
-    </div>
-  );
+    return (
+    <React.Fragment>
+
+        <Login />
+    </React.Fragment>
+    );
 }
 
 export default App;
