@@ -3,7 +3,7 @@ import { useLogin } from '../Hooks/useLogin';
 import { LoginHooks, LoginState } from '../Model/LoginData';
 
 const FormView: React.FC<LoginHooks> = ({
-    loginState,
+    state,
     handleBlur
 }) => {
     return (
@@ -16,24 +16,30 @@ const FormView: React.FC<LoginHooks> = ({
                 <label htmlFor="userName" className="login-input login__form__item">
                     <input 
                         id="userName"
+                        name="userName"
                         type="text"
                         placeholder="&nbsp;"
 
-                        defaultValue={loginState.userName.value}
+                        defaultValue={state.userName.value}
                         onBlur={handleBlur}
                     />
                     <span className="login-input__placeholder">Username</span>
                     <span className="login-input__border"></span>
                 </label>
+                {state.userName.errors.length}
+                {state.userName.errors.map((errorMessage) => {
+                    return <span key={errorMessage}>{errorMessage}</span>
+                })}
                 
                 {/* パスワード */}
                 <label htmlFor="password" className="login-input login__form__item">
                     <input 
                         id="password"
                         type="password"
+                        name="password"
                         placeholder="&nbsp;"
 
-                        defaultValue={loginState.password.value}
+                        defaultValue={state.password.value}
                         onBlur={handleBlur}
                      />
                     <span className="login-input__placeholder">Password</span>

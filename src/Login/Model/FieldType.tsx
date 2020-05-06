@@ -3,12 +3,14 @@ type Primitive = string | number;
 export default class FieldType {
 
     private _name: string;
+    private _label: string;
     private _value: Primitive;
     private _errors: string[];
 
-    constructor(name: string, value: Primitive) {
+    constructor(name: string, value: Primitive, label: string) {
         this._name = name;
         this._value = value;
+        this._label = label;
 
         this._errors = [];
     }
@@ -18,6 +20,9 @@ export default class FieldType {
     }
     set name(newName: string) {
         this._name = newName;
+    }
+    get label(): string {
+        return this._label;
     }
 
     get value(): Primitive {
@@ -31,6 +36,6 @@ export default class FieldType {
         return this._errors;
     }
     set errors(newErrors: string[]) {
-        this.errors = newErrors;
+        this._errors = newErrors;
     }
 }

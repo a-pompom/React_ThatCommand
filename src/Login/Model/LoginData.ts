@@ -7,10 +7,14 @@ import FieldType from './FieldType';
 export interface LoginState {
     userName: FieldType,
     password: FieldType,
-    hasError: boolean
 };
 
+export enum LoginFields {
+    UserName = 'userName',
+    Password = 'password'
+}
+
 export interface LoginHooks {
-    loginState: LoginState,
+    state: LoginState,
     handleBlur: {(event: React.ChangeEvent<HTMLInputElement>): void}
 }
