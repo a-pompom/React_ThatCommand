@@ -1,21 +1,41 @@
 import React from 'react';
+import { useLogin } from '../Hooks/useLogin';
+import { LoginHooks, LoginState } from '../Model/LoginData';
 
-const Form = () => {
-
+const FormView: React.FC<LoginHooks> = ({
+    loginState,
+    handleBlur
+}) => {
     return (
 
         <article className="login__form">
         
             <form action="#" method="post">
                 
+                {/* ユーザ名 */}
                 <label htmlFor="userName" className="login-input login__form__item">
-                    <input type="text" placeholder="&nbsp;" id="userName" />
+                    <input 
+                        id="userName"
+                        type="text"
+                        placeholder="&nbsp;"
+
+                        defaultValue={loginState.userName.value}
+                        onBlur={handleBlur}
+                    />
                     <span className="login-input__placeholder">Username</span>
                     <span className="login-input__border"></span>
                 </label>
                 
+                {/* パスワード */}
                 <label htmlFor="password" className="login-input login__form__item">
-                    <input type="password" placeholder="&nbsp;" id="password" />
+                    <input 
+                        id="password"
+                        type="password"
+                        placeholder="&nbsp;"
+
+                        defaultValue={loginState.password.value}
+                        onBlur={handleBlur}
+                     />
                     <span className="login-input__placeholder">Password</span>
                     <span className="login-input__border"></span>
                 </label>
@@ -29,5 +49,14 @@ const Form = () => {
         </article>
     );
 };
+
+const Form = () => {
+
+    const loginHooks: LoginHooks = useLogin();
+    // FormViewへHooksから受け取った状態などを渡す
+    return (
+        <FormView {...loginHooks} />
+    )
+}
 
 export default Form;
