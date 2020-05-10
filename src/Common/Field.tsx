@@ -1,13 +1,19 @@
-type Primitive = string | number;
 
-export default class FieldType {
+/**
+ * HTMLの入力エリアを表現する型
+ */
+export default class Field<T> {
 
+    // 名称 name属性ではなく、種類を区別するために利用
     private _name: string;
+    // 表示名
     private _label: string;
-    private _value: Primitive;
+    // 値
+    private _value: T;
+    // バリデーションエラー
     private _errors: string[];
 
-    constructor(name: string, value: Primitive, label: string) {
+    constructor(name: string, value: T, label: string) {
         this._name = name;
         this._value = value;
         this._label = label;
@@ -15,6 +21,7 @@ export default class FieldType {
         this._errors = [];
     }
 
+    // getter/setter---------------------------------------------------------------------------
     get name(): string {
         return this._name;
     }
@@ -25,10 +32,10 @@ export default class FieldType {
         return this._label;
     }
 
-    get value(): Primitive {
+    get value(): T {
         return this._value;
     }
-    set value(newValue: Primitive) {
+    set value(newValue: T) {
         this._value = newValue;
     }
 
