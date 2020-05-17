@@ -12,8 +12,7 @@ body {
   color: #4d464f;
 }
 
-* {
-	box-sizing: border-box;
+* { box-sizing: border-box;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -72,4 +71,10 @@ pre {
 	font-size: 90%;	
 	font-family: 'Noto Sans JP', sans-serif;
 	white-space: pre-wrap ;
+}
+
+.error {
+	display: block;
+	color: #CB72AA;
+	text-align: center;
 }
