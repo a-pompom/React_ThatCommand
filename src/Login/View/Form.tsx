@@ -26,17 +26,18 @@ const FormView: React.FC<LoginHooks> = ({
                     <span className="login-input__placeholder">Username</span>
                     <span className="login-input__border"></span>
                 </label>
-                {state.user.userName.errors.length}
                 {state.user.userName.errors.map((errorMessage) => {
-                    return <span key={errorMessage}>{errorMessage}</span>
+                    return (
+                        <span key={errorMessage} className="error">{errorMessage}</span>
+                    )
                 })}
                 
                 {/* パスワード */}
                 <label htmlFor="password" className="login-input login__form__item">
                     <input 
                         id="password"
-                        type="user.password"
-                        name="password"
+                        type="password"
+                        name="user.password"
                         placeholder="&nbsp;"
 
                         defaultValue={state.user.password.value}
@@ -45,6 +46,11 @@ const FormView: React.FC<LoginHooks> = ({
                     <span className="login-input__placeholder">Password</span>
                     <span className="login-input__border"></span>
                 </label>
+                {state.user.password.errors.map((errorMessage) => {
+                    return (
+                        <span key={errorMessage} className="error">{errorMessage}</span>
+                    )
+                })}
                 
                 <br />
 

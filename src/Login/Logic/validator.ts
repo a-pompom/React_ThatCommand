@@ -44,5 +44,8 @@ const executeValidate = <Value>(loginState: LoginState, field: Field<Value>) => 
     }
     if (field.name === LoginFields.Password) {
 
+        field.errors = [];
+        validator.validateMinLength(field, 10);
+        validator.validateAlphaNumericText(field);
     }
 };
