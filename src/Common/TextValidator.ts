@@ -28,7 +28,7 @@ export const validateMaxLength = <Value>(field: Field<Value>, maxLength: number)
     
     const target = String(field.value).length;
 
-    const ERROR_MESSAGE = `${field.label}は${maxLength}文字以上で入力してください。`;
+    const ERROR_MESSAGE = `${field.label}は${maxLength}文字以下で入力してください。`;
 
     if (target > maxLength) {
         field.errors.push(ERROR_MESSAGE);
@@ -44,9 +44,9 @@ export const validateMaxLength = <Value>(field: Field<Value>, maxLength: number)
  */
 export const validateNum = <Value>(field: Field<Value>): void => {
 
-    const isNumeric = /^\d+$/.test(String(field.value));
+    const isNumeric = /^[-]?([1-9]\d*|0)(\.\d+)?$/.test(String(field.value));
 
-    const ERROR_MESSAGE = '数値を入力してください';
+    const ERROR_MESSAGE = '数値を入力してください。';
 
     if (!isNumeric) {
         field.errors.push(ERROR_MESSAGE);
