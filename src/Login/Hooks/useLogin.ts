@@ -3,7 +3,7 @@ import React, { useReducer } from 'react';
 import { LoginState } from '../Model/LoginData';
 import { DispatchType, ChangeAction, reducer } from '../Logic/reducer';
 
-import User from '../Model/User';
+import { User} from '../Model/User';
 
 /**
  * ログイン画面で利用する状態・イベントハンドラを生成するフック

@@ -2,7 +2,7 @@
 /**
  * HTMLの入力エリアを表現する型
  */
-export default class Field<T> {
+export class Field<T> {
 
     // 名称 name属性ではなく、種類を区別するために利用
     private _name: string;

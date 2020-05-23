@@ -1,5 +1,5 @@
 import { LoginState, LoginFields } from '../Model/LoginData';
-import Field from '../../Common/Field';
+import { Field } from '../../Common/Field';
 
 import { getPropertyByKeyString } from '../../Common/objectHandler';
 import * as validator from '../../Common/TextValidator';

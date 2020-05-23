@@ -1,7 +1,7 @@
 import React from 'react';
 
 // ヘッダ
-const Header = () => {
+export const Header = () => {
 
     return (
 		<header className="login__header">
@@ -11,5 +11,3 @@ const Header = () => {
 		</header>
     );
 };
-
-export default Header;

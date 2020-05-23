@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Login from './Login/View/Login';
+import { Login } from './Login/View/Login';
 
 const App = () =>{
 

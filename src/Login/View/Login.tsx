@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Header from './Header';
-import Form from './Form';
+import { Header } from './Header';
+import { Form } from './Form';
 
-const Login = () => {
+export const Login = () => {
 
     return (
 
@@ -15,5 +15,3 @@ const Login = () => {
         </div>
     );
 };
-
-export default Login;

@@ -1,6 +1,6 @@
-import Field from '../../Common/Field';
+import { Field } from '../../Common/Field';
 
-export default class User {
+export class User {
 
     private _userName: Field<string>;
     private _password: Field<string>;
