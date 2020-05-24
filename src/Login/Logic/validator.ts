@@ -35,17 +35,16 @@ export const validate = <Value>(state: LoginState, fieldName: string, fieldValue
  */
 const executeValidate = <Value>(loginState: LoginState, field: Field<Value>) => {
 
-    // ユーザ名 [桁数チェック, 文字種別チェック]
+    // ユーザ名 [文字種別チェック]
     if (field.name === LoginFields.UserName) {
 
         field.errors = [];
-        validator.validateMinLength(field, 10);
         validator.validateAlphaNumericText(field);
     }
+    // パスワード [文字種別チェック]
     if (field.name === LoginFields.Password) {
 
         field.errors = [];
-        validator.validateMinLength(field, 10);
         validator.validateAlphaNumericText(field);
     }
 };
