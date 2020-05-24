@@ -1,6 +1,10 @@
 import React from 'react';
 
-export const CategoryList = () => {
+import { Category } from '../Model/TopData';
+
+export const CategoryList: React.FC<{categoryList: Category[]}> = ({
+	categoryList
+}) => {
     return (
 		<article className="top__category">
 			
@@ -45,33 +49,19 @@ export const CategoryList = () => {
 				</header>
 				
 				<ul className="top__category--all__list">
-					<li className="top__category--all__list__item">
-						Git
-					</li>
-					<li className="top__category--all__list__item">
-						Linux
-					</li>
-					<li className="top__category--all__list__item">
-						Vim
-					</li>
-					<li className="top__category--all__list__item">
-						Sass
-					</li>
-					<li className="top__category--all__list__item">
-						Docker
-					</li>
-					<li className="top__category--all__list__item">
-						Excel
-					</li>
-					<li className="top__category--all__list__item">
-						Vue
-					</li>
-					<li className="top__category--all__list__item">
-						JavaScript
-					</li>
-					<li className="top__category--all__list__item">
-						Java
-					</li>
+					{
+						categoryList.map((category) => {
+
+							return (
+								<li
+									key={category.id}
+									className="top__category--all__list__item"
+								>
+									{category.name}
+								</li>
+							)
+						})
+					}
 				</ul>
 
 			</section>
@@ -79,5 +69,4 @@ export const CategoryList = () => {
 		</article>
 
     )
-
 }
