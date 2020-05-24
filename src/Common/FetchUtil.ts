@@ -1,4 +1,4 @@
-export default class FetchUtil {
+export class FetchUtil {
 
     /**
      * APIからリソースを取得
@@ -48,5 +48,4 @@ export default class FetchUtil {
 
         return responseJSON;
     }
-
 }

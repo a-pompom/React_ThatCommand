@@ -1,5 +1,5 @@
 import React from 'react';
-import User from './User';
+import { User } from './User';
 
 // ログイン画面で用いる状態
 // userName: 画面から受け取るユーザ名

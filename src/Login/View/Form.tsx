@@ -62,7 +62,7 @@ const FormView: React.FC<LoginHooks> = ({
     );
 };
 
-const Form = () => {
+export const Form = () => {
 
     const loginHooks: LoginHooks = useLogin();
     // FormViewへHooksから受け取った状態などを渡す
@@ -70,5 +70,3 @@ const Form = () => {
         <FormView {...loginHooks} />
     )
 }
-
-export default Form;
