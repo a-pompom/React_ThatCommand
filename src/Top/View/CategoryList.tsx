@@ -48,20 +48,21 @@ export const CategoryList: React.FC<{categoryList: Category[]}> = ({
 
 				</header>
 				
-				<ul className="top__category--all__list">
-					{
-						categoryList.map((category) => {
+				<ul id="topAllCategoryList" className="top__category--all__list">
+					
+					{categoryList.map((category, index) => {
+						console.log(category);
 
-							return (
-								<li
-									key={category.id}
-									className="top__category--all__list__item"
-								>
-									{category.name}
-								</li>
-							)
-						})
-					}
+						return (
+							<li
+								key={category.id}
+								id={`topAllCategory${index}`}
+								className="top__category--all__list__item"
+							>
+								{category.name}
+							</li>
+						);
+					})}
 				</ul>
 
 			</section>
