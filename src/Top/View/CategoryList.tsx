@@ -51,7 +51,6 @@ export const CategoryList: React.FC<{categoryList: Category[]}> = ({
 				<ul id="topAllCategoryList" className="top__category--all__list">
 					
 					{categoryList.map((category, index) => {
-						console.log(category);
 
 						return (
 							<li
