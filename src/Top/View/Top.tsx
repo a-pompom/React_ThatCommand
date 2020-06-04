@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Header } from './Header';
+import { Body } from './Body';
 import { Search } from './Search';
 import { CategoryList } from './CategoryList';
 
@@ -8,7 +9,8 @@ import { Hook } from '../Model/TopData';
 import { useTop } from '../Hooks/useTop';
 
 const TopView: React.FC<Hook> = ({
-    state
+    state,
+    emitChangeCategory
 }) => {
 
     return (
@@ -17,9 +19,15 @@ const TopView: React.FC<Hook> = ({
 
             <Header />
 
-            <Search />
+            <section className="top__body">
 
-            <CategoryList categoryList={state.categoryList} />
+                <Body />
+                
+                <Search handleSearch={emitChangeCategory} />
+                
+            </section>
+
+            <CategoryList categoryList={state.filteredCategoryList} />
 
         </div>
     )
