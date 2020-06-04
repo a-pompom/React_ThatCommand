@@ -1,6 +1,7 @@
-import { DispatchType, InitAction, reducer } from '../../src/Top/Logic/reducer';
+import { reducer } from '../../src/Top/Logic/reducer';
+import * as Action from '../../src/Top/Model/TopAction';
 
-import * as TestData from './testData';
+import * as TestData from './Data/testData';
 
 describe('Top画面のreducerのUT', () => {
 
@@ -8,8 +9,8 @@ describe('Top画面のreducerのUT', () => {
 
         test('初期描画アクションでカテゴリ一覧が取得できること。', () => {
 
-            const action: InitAction = {
-                type: DispatchType.INIT,
+            const action: Action.InitAction = {
+                type: Action.DispatchType.INIT,
                 payload: {
                     categoryList: TestData.InitialCategoryList
                 }

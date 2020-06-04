@@ -1,5 +1,5 @@
 import { getCategoryList } from '../../src/Top/Logic/APIHandler';
-import { APIType, setUp, tearDown} from './testMock';
+import { APIType, setUp, tearDown} from './Data/testMock';
 
 describe('APIのモックから受け取ったレスポンスを加工', () => {
 

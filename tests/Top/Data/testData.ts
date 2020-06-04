@@ -1,10 +1,11 @@
-import { Field } from '../../src/Common/Field';
-import { TopState, Category } from '../../src/Top/Model/TopData';
+import { TopState, Category } from '../../../src/Top/Model/TopData';
 
+// DOM要素を操作するためのセレクタ
 export const DOM_SELECTOR = {
     CATEGORY_LIST_ITEM: '#topAllCategoryList li'
 }
 
+// 初期描画段階でのカテゴリ一覧
 export const InitialCategoryList: Category[] = [
     {
         id: '1',
@@ -15,8 +16,11 @@ export const InitialCategoryList: Category[] = [
         name: 'React'
     }
 ];
+
+// 初期状態
 export const InitialTopState: TopState = {
     categoryList: [],
-    searchCategoryName: new Field<string>('', '', ''),
-    searchCommandName: new Field<string>('', '', '')
+    filteredCategoryList: [],
+    searchCategoryName: '',
+    searchCommandName: ''
 }

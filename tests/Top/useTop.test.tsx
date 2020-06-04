@@ -1,8 +1,8 @@
 import React from 'react';
 import { act, Simulate } from 'react-dom/test-utils';
 import { Top } from '../../src/Top/View/Top';
-import { APIType, setUp, tearDown} from './testMock';
-import { DOM_SELECTOR } from './testData';
+import { APIType, setUp, tearDown} from './Data/testMock';
+import { DOM_SELECTOR } from './Data/testData';
 
 import { mount } from 'enzyme';
 
