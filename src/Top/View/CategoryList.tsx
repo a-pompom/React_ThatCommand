@@ -48,6 +48,7 @@ export const CategoryList: React.FC<{categoryList: Category[]}> = ({
 
 				</header>
 				
+				{/* 全カテゴリ一覧 */}
 				<ul id="topAllCategoryList" className="top__category--all__list">
 					
 					{categoryList.map((category, index) => {
