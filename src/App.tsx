@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { Login } from './Login/View/Login';
 import { Top } from './Top/View/Top';
-import { Command } from './Command/View/Command';
+import { CommandContainer } from './Command/View/CommandContainer';
 
 const App = () =>{
 
@@ -12,7 +12,7 @@ const App = () =>{
             <Switch>
                 <Route path="/login" children={<Login />}></Route>
                 <Route path="/top" children={<Top />}></Route>
-                <Route patah="/command" children={<Command />}></Route>
+                <Route patah="/command" children={<CommandContainer />}></Route>
             </Switch>
         </BrowserRouter>
     );
