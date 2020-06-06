@@ -20,9 +20,62 @@ describe('Top画面のreducerのUT', () => {
 
             const actual = reducer(state, action);
 
-            expect(actual.categoryList.length).toBe(2);
-            expect(actual.categoryList[0].id).toBe('1');
+            expect(actual.categoryList.length).toBe(TestData.InitialCategoryLength);
+            expect(actual.categoryList[0].id).toBe('b8715b9c-ce79-4010-be32-9624177318ac');
             expect(actual.categoryList[0].name).toBe('Git');
+        });
+    });
+
+    describe('カテゴリ検索', () => {
+
+        test('検索語句が空のときは、全てのカテゴリが取得できること。', () => {
+
+            const action: Action.ChangeCategoryAction = {
+                type: Action.DispatchType.CHANGE_CATEGORY,
+                payload: {
+                    categoryName: ''
+                }
+            };
+            const state = TestData.TopStateForSearchCategory;
+
+            const actual = reducer(state, action);
+
+            expect(actual.filteredCategoryList.length).toBe(TestData.InitialCategoryLength);
+            expect(actual.filteredCategoryList[0].id).toBe('b8715b9c-ce79-4010-be32-9624177318ac');
+            expect(actual.filteredCategoryList[0].name).toBe('Git');
+        });
+
+        test('検索語句と部分一致するカテゴリ名が存在するとき、対象が取得できること。', () => {
+
+            const action: Action.ChangeCategoryAction = {
+                type: Action.DispatchType.CHANGE_CATEGORY,
+                payload: {
+                    categoryName: 'Docker'
+                }
+            };
+            const state = TestData.TopStateForSearchCategory;
+
+            const actual = reducer(state, action);
+
+            expect(actual.filteredCategoryList.length).toBe(2);
+            expect(actual.filteredCategoryList[0].name).toContain('Docker');
+            expect(actual.filteredCategoryList[1].name).toContain('Docker');
+
+        });
+
+        test('検索語句と部分一致するカテゴリ名が存在しないとき、カテゴリ一覧が空となること。', () => {
+
+            const action: Action.ChangeCategoryAction = {
+                type: Action.DispatchType.CHANGE_CATEGORY,
+                payload: {
+                    categoryName: 'UNKNOWN Category'
+                }
+            };
+            const state = TestData.TopStateForSearchCategory;
+
+            const actual = reducer(state, action);
+
+            expect(actual.filteredCategoryList.length).toBe(0);
         });
     });
 });
