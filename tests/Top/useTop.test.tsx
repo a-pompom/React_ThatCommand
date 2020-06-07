@@ -1,8 +1,9 @@
 import React from 'react';
 import { act, Simulate } from 'react-dom/test-utils';
 import { Top } from 'Component/Top/View/Top';
-import { APIType, setUp, tearDown} from './Data/testMock';
+import * as TestMock from '../APIHandler/Category/testMock';
 import * as TestData from './Data/testData';
+import * as TestCategory from '../APIHandler/Category/testData';
 
 import { mount } from 'enzyme';
 
@@ -13,7 +14,7 @@ describe('useTop Hook', () => {
     // 事前処理・事後処理 Hooksを扱うためのコンポーネントのマウント先を生成・破棄
     beforeEach( async () => {
 
-        setUp(APIType.GET_CATEGORY);
+        TestMock.setUp(TestMock.APIType.GET_CATEGORY);
 
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -25,7 +26,7 @@ describe('useTop Hook', () => {
     });
     afterEach(() => {
 
-        tearDown(APIType.GET_CATEGORY);
+        TestMock.tearDown(TestMock.APIType.GET_CATEGORY);
 
         document.body.removeChild(container);
         container = null;
@@ -36,7 +37,7 @@ describe('useTop Hook', () => {
         const categoryListDOM = container.querySelectorAll(TestData.DOM_SELECTOR.CATEGORY_LIST_ITEM);
 
         categoryListDOM.forEach((categoryDOM, index) => {
-            expect(categoryDOM.textContent).toBe(TestData.CategoryNameList[index]);
+            expect(categoryDOM.textContent).toBe(TestCategory.CategoryNameList[index]);
         });
     });
 
@@ -87,6 +88,6 @@ describe('useTop Hook', () => {
         const categoryListDOM = container.querySelectorAll(TestData.DOM_SELECTOR.CATEGORY_LIST_ITEM);
 
         // リストがフィルタされないこと。
-        expect(categoryListDOM.length).toBe(TestData.InitialCategoryLength);
+        expect(categoryListDOM.length).toBe(TestCategory.InitialCategoryLength);
     });
 });

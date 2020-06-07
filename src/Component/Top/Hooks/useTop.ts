@@ -1,9 +1,10 @@
 import React, { useReducer, useEffect } from 'react';
 
 import { TopState } from '../Model/TopData';
-import { getCategoryList } from '../Logic/APIHandler';
 import { reducer } from '../Logic/reducer';
 import * as Action from '../Model/TopAction';
+
+import { getCategoryList } from 'APIHandler/CategoryAPI';
 
 // 画面描画用フック
 export const useTop = () => {

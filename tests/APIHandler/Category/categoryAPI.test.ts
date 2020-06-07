@@ -1,6 +1,6 @@
-import { getCategoryList } from 'Component/Top/Logic/APIHandler';
-import * as TestMock from './Data/testMock';
-import * as TestData from './Data/testData';
+import { getCategoryList } from 'APIHandler/CategoryAPI';
+import * as TestMock from './testMock';
+import * as TestData from './testData';
 
 describe('APIのモックから受け取ったレスポンスを加工', () => {
 
