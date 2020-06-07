@@ -1,4 +1,5 @@
-import { TopState, Category } from '../../../src/Top/Model/TopData';
+import { TopState } from 'Component/Top/Model/TopData';
+import { Category } from 'Model/Category';
 
 // DOM要素を操作するためのセレクタ
 export const DOM_SELECTOR = {

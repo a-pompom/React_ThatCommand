@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Category } from '../Model/TopData';
+import { Category } from 'Model/Category';
 
 export const CategoryList: React.FC<{categoryList: Category[]}> = ({
 	categoryList

@@ -1,6 +1,6 @@
-import { ChangeAction, DispatchType, reducer} from '../../src/Login/Logic/reducer';
-import { LoginState } from '../../src/Login/Model/LoginData';
-import { User } from '../../src/Login/Model/User';
+import { ChangeAction, DispatchType, reducer} from 'Component/Login/Logic/reducer';
+import { LoginState } from 'Component/Login/Model/LoginData';
+import { User } from 'Component/Login/Model/User';
 
 describe('ChangeActionの動作確認', () => {
 

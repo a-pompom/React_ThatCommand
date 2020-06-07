@@ -1,6 +1,6 @@
-import { LoginState } from '../../src/Login/Model/LoginData';
-import { User } from '../../src/Login/Model/User';
-import { validate } from '../../src/Login/Logic/validator';
+import { LoginState } from 'Component/Login/Model/LoginData';
+import { User } from 'Component/Login/Model/User';
+import { validate } from 'Component/Login/Logic/validator';
 
 describe('Validatorのバリデーション処理動作確認', () => {
 

@@ -1,5 +1,5 @@
-import { Category, CategoryResponse } from '../Model/TopData';
-import { FetchUtil } from '../../Common/FetchUtil';
+import { Category, CategoryResponse } from 'Model/Category';
+import { FetchUtil } from 'Common/FetchUtil';
 
 const END_POINT = 'http://localhost:18080/api/v1';
 

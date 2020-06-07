@@ -1,4 +1,4 @@
-import { Field } from '../../Common/Field';
+import { Field } from 'Common/Field';
 
 export class User {
 

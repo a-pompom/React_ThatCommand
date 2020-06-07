@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { act, Simulate } from 'react-dom/test-utils';
-import { Form } from '../../src/Login/View/Form';
+import { Form } from 'Component/Login/View/Form';
 
 describe('useLogin Hook', () => {
 

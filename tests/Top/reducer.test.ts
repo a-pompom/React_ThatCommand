@@ -1,5 +1,5 @@
-import { reducer } from '../../src/Top/Logic/reducer';
-import * as Action from '../../src/Top/Model/TopAction';
+import { reducer } from 'Component/Top/Logic/reducer';
+import * as Action from 'Component/Top/Model/TopAction';
 
 import * as TestData from './Data/testData';
 

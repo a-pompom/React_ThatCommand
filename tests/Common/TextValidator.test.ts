@@ -1,6 +1,6 @@
-import * as validator from '../../src/Common/TextValidator';
+import * as validator from 'Common/TextValidator';
 
-import { Field } from '../../src/Common/Field';
+import { Field } from 'Common/Field';
 
 describe('最小桁数チェック', () => {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { act, Simulate } from 'react-dom/test-utils';
-import { Top } from '../../src/Top/View/Top';
+import { Top } from 'Component/Top/View/Top';
 import { APIType, setUp, tearDown} from './Data/testMock';
 import * as TestData from './Data/testData';
 

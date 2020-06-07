@@ -1,4 +1,4 @@
-import { Category } from './TopData';
+import { Category } from 'Model/Category';
 
 // イベントの種類
 export enum DispatchType {

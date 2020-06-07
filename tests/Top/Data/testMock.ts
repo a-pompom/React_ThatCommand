@@ -2,6 +2,8 @@ import FetchMock from 'fetch-mock';
 import { configure } from "enzyme/build";
 import Adapter from "enzyme-adapter-react-16/build";
 
+import { CategoryResponse } from 'Model/Category';
+
 const END_POINT = 'http://localhost:18080/api/v1';
 configure({ adapter: new Adapter() });
 
@@ -11,7 +13,7 @@ export enum APIType {
 }
 
 // Mockのレスポンスとなるカテゴリリスト
-const MockCategoryList = [
+const MockCategoryList: CategoryResponse[] = [
     {
         category_id: 'b8715b9c-ce79-4010-be32-9624177318ac',
         category_name: 'Git'

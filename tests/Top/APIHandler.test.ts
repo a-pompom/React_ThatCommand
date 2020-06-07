@@ -1,4 +1,4 @@
-import { getCategoryList } from '../../src/Top/Logic/APIHandler';
+import { getCategoryList } from 'Component/Top/Logic/APIHandler';
 import * as TestMock from './Data/testMock';
 import * as TestData from './Data/testData';
 
