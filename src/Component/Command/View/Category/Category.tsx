@@ -3,8 +3,11 @@ import React from 'react';
 import { Header } from './Header';
 import { List } from './List';
 import { Input } from './Input';
+import { CategoryHook } from 'Component/Command/Model/CategoryData';
 
-const CategoryView = () => {
+export const Category: React.FC<CategoryHook> = ({
+    categoryState
+}) => {
 
     return (
         <React.Fragment>
@@ -16,7 +19,7 @@ const CategoryView = () => {
                 <div className="command-category--body">
 
                     <Input />
-                    <List />
+                    <List categoryList={categoryState.categoryList} />
                     
                 </div>
 
@@ -24,11 +27,4 @@ const CategoryView = () => {
 
         </React.Fragment>
     )
-};
-
-export const Category = () => {
-
-    return (
-        <CategoryView />
-    );
 };

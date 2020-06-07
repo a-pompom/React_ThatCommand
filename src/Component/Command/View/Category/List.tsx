@@ -1,21 +1,38 @@
 import React from 'react';
+import { Category } from 'Model/Category';
 
-export const List = () => {
+interface Prop {
+    categoryList: Category[]
+}
+
+export const List = ({
+    categoryList
+
+}: Prop) => {
 
     return (
         <React.Fragment>
             <aside>
                 <ul id="categoryList" className="command-category--body__list category-list">
-                    <span><i id="categoryEdit-1" className="fas fa-cog category-edit"></i></span>
-                    <li id="categoryListItem-1" className="category-list__item">
-                        Category1
+                    {
+                        categoryList.map((category, index) => {
 
-                    </li>
-                    <span><i id="categoryEdit-2" className="fas fa-cog category-edit"></i></span>
-                    <li id="categoryListItem-2" className="category-list__item">
-                        Category2
+                            return (
+                                <React.Fragment
+                                    key={category.id}
+                                >
+                                    <span><i id={`categoryEdit-${index}`} className="fas fa-cog category-edit"></i></span>
+                                    <li 
+                                        id={`categoryListItem-${index}`}
+                                        className="category-list__item"
+                                    >
+                                        {category.name}
+                                    </li>
+                                </React.Fragment>
+                            )
 
-                    </li>
+                        })
+                    }
                 </ul>
             </aside>
         </React.Fragment>
